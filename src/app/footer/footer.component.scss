@@ -1,0 +1,9 @@
+$color-sky: #1F9BC9;
+
+footer{
+    background-color: $color-sky;
+    position: relative;
+    .info{
+        font-style: italic;
+    }
+}

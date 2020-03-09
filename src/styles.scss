@@ -1,1 +1,165 @@
 /* You can add global styles to this file, and also import other style files */
+$transparent-sky : rgba(31,155,201,0.74);
+$transparent-white: rgba(255,255,255,0.83);
+$font-black: #424242;
+$color-sky: #1F9BC9;
+$color-sky--light:#19B9F4;
+$color-sky--dark:#1C8BB5;
+
+$font-comforta: 'Comfortaa', cursive;
+$font-montst: 'Montserrat', sans-serif;
+$font-abz: 'ABeeZee', sans-serif;
+
+$t-shadow: 2px 2px 6px #181818;
+
+.font-comforta{
+    font-family: $font-comforta;
+}
+
+@mixin box-shadow-mx{
+    -webkit-box-shadow: 10px 10px 38px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 38px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 38px -6px rgba(0,0,0,0.75);
+}
+
+@mixin box-shadow-light{
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(212,231,236,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212,231,236,1);
+    box-shadow: 0px 0px 5px 0px rgba(212,231,236,1);
+}
+
+.box-shadow{
+    @include box-shadow-mx;
+}
+
+h3{
+    color: $color-sky--dark;
+    font-size: 2.8rem;
+    padding:10px;
+}
+
+p{
+    font-family: $font-comforta;    
+    padding: 7px 0;
+    font-size: 1.4rem;
+    color: $font-black;
+}
+
+.row{
+    margin:0;
+}
+.container-fluid{
+    padding: 0;
+}
+
+body{
+   background-position: center;
+   background-image: url('assets/images/landscape.png');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+
+}
+
+main{
+    padding-top: 10em;
+    z-index: 0;
+    position: relative;
+    top: -10em;
+    left: 0;
+    width: 100%;
+    border: 0;
+    background: $transparent-white;
+    overflow: hidden;
+}
+
+
+
+// --------------------------All Phone images----------//
+.i-phone{    //black phone 
+    position: relative;
+    display: inline-block;
+    z-index:1;
+    &__app{//black phone bg
+        width: 89%;
+        position: absolute;
+        top: 43px;
+        left: 18px;        
+    }  
+}
+.i-phone-white{ //white phone
+    position: absolute;
+    display: inline-block;
+    right: 0.5em;
+    z-index: -1;
+    &__app{//white phone bg
+        width: 89%;
+        position: absolute;
+        top: 60px;
+        left: 15px;          
+    }
+}
+.i-phone-white__left{
+    left: 0.5em;
+    right: unset; 
+}
+
+
+
+hr{
+    background-color: $color-sky--light;
+    opacity:0.6;
+    margin: 5em 0;
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+    .row-reverse{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .video-container{
+        padding: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 700px) { //i-pad
+
+    .i-phone-white, .i-phone-white__left{
+        display: none;
+    }
+    .video{ 
+        height: 300px!important;
+    }
+    
+
+}
+
+
+
+@media screen and (max-width: 345px) {   //small phone
+
+.i-phone{    //black phone 
+    position: relative;
+    display: inline-block;
+    z-index:1;
+    img{
+        width: 89%;
+      }
+    &__app{//black phone bg
+        width: 80%!important;
+        position: absolute;
+        top: 30px;
+        left: 27px;        
+        }
+    }
+
+    .big-phone-app{
+        top: 34px;
+        left: 31px ;
+        }      
+}   
